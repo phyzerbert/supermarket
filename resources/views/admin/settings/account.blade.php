@@ -29,6 +29,7 @@
                                 <th width="40">#</th>
                                 <th>{{__('page.name')}}</th>
                                 <th>{{__('page.currency')}}</th>
+                                <th>{{__('page.balance')}}</th>
                                 <th>{{__('page.action')}}</th>
                             </tr>
                         </thead>
@@ -38,6 +39,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td class="name">{{$item->name}}</td>
                                     <td class="currency" data-value='{{$item->currency_id}}'>{{$item->currency->name ?? ''}}</td>
+                                    <td class="balance">{{number_format($item->balance, 2)}}</td>
                                     <td class="py-1">
                                         <a href="#" class="btn btn-sm btn-primary btn-icon mr-1 btn-edit" data-id="{{$item->id}}"><div><i class="fa fa-edit"></i></div></a>
                                         <a href="{{route('account.delete', $item->id)}}" class="btn btn-sm btn-danger btn-icon btn-confirm" data-id="{{$item->id}}"><div><i class="fa fa-trash-o"></i></div></a>
